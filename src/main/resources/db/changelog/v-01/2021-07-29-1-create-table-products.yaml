@@ -32,4 +32,10 @@ databaseChangeLog:
                - column:
                    name: merchant_id
                    type: int
+               - column:
+                   name: payment_option
+                   type: varchar(25)
+               - column:
+                   name: delivery_option
+                   type: varchar(25)
 

@@ -1,5 +1,6 @@
 package com.task.best.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 import lombok.Generated;
 
@@ -13,7 +14,6 @@ public class Merchant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "merchant_id")
     Integer id;
 
     @Column(name ="merchant_type")
@@ -28,11 +28,9 @@ public class Merchant {
     String username;
     String password;
 
-    @OneToMany(mappedBy = "merchants", cascade = CascadeType.ALL)
+
+    @OneToMany(mappedBy = "merchant", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonBackReference
     List<Products> products;
-
-
-
-
 
 }

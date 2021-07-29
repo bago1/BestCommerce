@@ -2,6 +2,7 @@ package com.task.best.api;
 
 import com.task.best.dto.MerchantDto;
 //import com.task.best.services.MerchantService;
+import com.task.best.dto.ProductsDto;
 import com.task.best.models.Products;
 import com.task.best.repo.MerchantRepo;
 import com.task.best.repo.UserRepo;
@@ -10,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -34,11 +37,16 @@ public class MerchantController {
     }
 
     @PostMapping(value = "/product")
-    public ResponseEntity<Products> register(@RequestBody Products products) {
-        service.saveProduct(products);
+    public ResponseEntity<ProductsDto> register(@RequestBody ProductsDto productsDto) {
+        service.saveProduct(productsDto);
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(products);
+                .body(productsDto);
+    }
+
+    @GetMapping(value = "/list")
+    public List<Products> listProducts(){
+        return service.getAllProducts();
     }
 
     @GetMapping(value = "/info")
