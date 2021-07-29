@@ -1,4 +1,4 @@
-package com.task.bestcommerce;
+package com.task.best;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
