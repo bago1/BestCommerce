@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1001
+      author:  bago
+      changes:
+        - createTable:
+             tableName:  user
+             columns:
+               -  column:
+                    name:  id
+                    type:  int
+                    autoIncrement:  true
+                    constraints:
+                      primaryKey:  true
+                      nullable:  false
+                      primaryKeyName: pk_user
+               -  column:
+                    name:  username
+                    type:  varchar(255)
+               -  column:
+                    name:  password
+                    type:  varchar(255)
+               -  column:
+                    name:  merchant_id
+                    type:  varchar(255)

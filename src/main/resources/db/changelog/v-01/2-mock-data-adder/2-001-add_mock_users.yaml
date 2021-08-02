@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2001
+      author: bago
+      changes:
+        - insert:
+            tableName: user
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: username
+                  value: rivaldo
+              - column:
+                  name: password
+                  value: $2y$12$XpR8zcoYKkz0uJFLPEX5x.SdUsA/TZYe3DaPebNWuHAYxl7IrEvgy
+#        - insert:
+#            tableName: user
+#            columns:
+#              - column:
+#                  name: id
+#                  value: 2001
+#              - column:
+#                  name: email
+#                  value: ronaldo
+#              - column:
+#                  name: password
+#                  value: ronaldo

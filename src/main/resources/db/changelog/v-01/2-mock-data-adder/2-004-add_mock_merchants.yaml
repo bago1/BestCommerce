@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2004
+      author:  bago
+#      changes:
+#        - insert:
+#            tableName: merchants
+#            columns:
+#              - column:
+#                  name: merchant_type
+#                  value: retail
+#              - column:
+#                  name: address
+#                  value: moscow
+#              - column:
+#                  name: phone_number
+#                  value: +994519722955
+#              - column:
+#                  name: email
+#                  value: boris@gmail.com
+#              - column:
+#                  name: username
+#                  value: boris
+#              - column:
+#                  name: password
+#                  value: boris
+#        - insert:
+#            tableName: merchants
+#            columns:
+#              - column:
+#                  name: merchant_type
+#                  value: wholesale
+#              - column:
+#                  name: address
+#                  value: newyork
+#              - column:
+#                  name: phone_number
+#                  value: +1669887548
+#              - column:
+#                  name: email
+#                  value: john@gmail.com
+#              - column:
+#                  name: username
+#                  value: john
+#              - column:
+#                  name: password
+#                  value: john

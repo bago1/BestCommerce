@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1002
+      author:  bago
+      changes:
+       -  createTable:
+             tableName:  role
+             columns:
+               -  column:
+                    name:  id
+                    type:  int
+                    autoIncrement:  true
+                    constraints:
+                      primaryKey:  true
+                      nullable:  false
+                      primaryKeyName: pk_role
+               -  column:
+                    name:  name
+                    type:  varchar(255)

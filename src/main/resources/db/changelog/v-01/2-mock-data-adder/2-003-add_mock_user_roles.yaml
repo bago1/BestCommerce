@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2003
+      author: bago
+      changes:
+        - insert:
+            tableName: user_role
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: user_id
+                  value: 1
+              - column:
+                  name: role_id
+                  value: 2

@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1004
+      author:  bago
+      changes:
+        -  createTable:
+             tableName:  merchants
+             columns:
+               -  column:
+                    name:  id
+                    type:  int
+                    autoIncrement:  true
+                    constraints:
+                      primaryKey:  true
+                      nullable:  false
+               -  column:
+                    name:  merchant_type
+                    type:  varchar(25)
+                    constraints:
+                      nullable: true
+               -  column:
+                    name:  address
+                    type:  varchar(50)
+                    constraints:
+                      nullable:  true
+               -  column:
+                    name:  merchant_name
+                    type:  varchar(50)
+                    constraints:
+                      nullable:  true
+               -  column:
+                    name:  owner_name
+                    type:  varchar(50)
+                    constraints:
+                      nullable:  true
+               -  column:
+                    name:  phone_number
+                    type:  varchar(25)
+                    constraints:
+                      nullable: true
+

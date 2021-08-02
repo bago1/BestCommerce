@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2002
+      author: bago
+      changes:
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: name
+                  value: MERCHANT
+#        - insert:
+#            tableName: role
+#            columns:
+#              - column:
+#                  name: id
+#                  value: 2004
+#              - column:
+#                  name: name
+#                  value: MERCHANT

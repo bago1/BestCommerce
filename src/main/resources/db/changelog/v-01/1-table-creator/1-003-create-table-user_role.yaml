@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1003
+      author:  bago
+      changes:
+        -  createTable:
+             tableName:  user_role
+             columns:
+               -  column:
+                    name:  id
+                    type:  int
+                    autoIncrement:  true
+                    constraints:
+                      primaryKey:  true
+                      nullable:  false
+               -  column:
+                    name:  user_id
+                    type:  int
+                    constraints:
+                      nullable: true
+                      referencedTableName: user
+                      referencedColumnNames: id
+                      foreignKeyName: users_roles_fk1
+               -  column:
+                    name:  role_id
+                    type:  int
+                    constraints:
+                      nullable: true
+                      referencedTableName: role
+                      referencedColumnNames: id
+                      foreignKeyName: users_roles_fk2
+
+#        - addForeignKeyConstraint:
+#              baseColumnNames: id
+#              baseTableName: user_role
+#              constraintName: "users_roles_fk1"
+#              referencedColumnNames: id
+#              referencedTableName: user
+#              onUpdate: cascade
+
