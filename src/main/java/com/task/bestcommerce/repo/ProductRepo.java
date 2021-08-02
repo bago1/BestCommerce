@@ -12,9 +12,9 @@ import java.util.List;
 public interface ProductRepo extends JpaRepository<Products,Integer> {
     Products findProductsByproductName(String name);
 
+    //todo ACCEPTANCE CRITERIA 4.1 (2nd part)
     @Query(value =
             "select * from products p left join user u on p. merchant_id = u.merchant_id where u.username = ?1"
             ,nativeQuery = true)
     List<Products> findAllByUsername(String username);
 }
-    

@@ -40,6 +40,7 @@ public class ProductsService {
     }
 
     //todo ACCEPTANCE CRITERIA 3.3
+    //user cannot see the products lower than 5 -FOR USER
     public List<ProductsDto> getAllProducts() {
         log.info("Fetching all Productss");
         List<Products> products = productsRepo.findAll();
@@ -48,6 +49,7 @@ public class ProductsService {
     }
 
 //todo ACCEPTANCE CRITERIA 4.1
+    //merchant see only his/her products - FOR MERCHANT
     public List<ProductsDto> getOnlyThisMerchantProducts() {
 
         Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
