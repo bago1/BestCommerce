@@ -26,15 +26,12 @@ import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 import static org.springframework.http.HttpStatus.FORBIDDEN;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-//TODO bu klass her bir requesti yoxluyur, oNCE gelen butun requeste baxir
 @Slf4j
 public class CustomAuthorizationFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        //bu pathi filtere salma.
         if (request.getServletPath().equals("/login")) {
-            log.info("ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssx");
             filterChain.doFilter(request, response);
         } else {
             //token format check

@@ -30,6 +30,8 @@ databaseChangeLog:
                       referencedColumnNames: id
                       foreignKeyName: users_roles_fk2
 
+
+
 #        - addForeignKeyConstraint:
 #              baseColumnNames: id
 #              baseTableName: user_role

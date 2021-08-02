@@ -1,6 +1,5 @@
 package com.task.bestcommerce.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.task.bestcommerce.types.DeliveryTypes;
 import com.task.bestcommerce.types.PaymentTypes;
@@ -12,11 +11,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "products")
 @Data
-public class Products {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+public class Products extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "product_category")

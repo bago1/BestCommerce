@@ -17,7 +17,7 @@ public class ProductsController {
     private final ProductsService productsService;
 
 
-    @GetMapping("/")
+    @GetMapping("/products")
     public ResponseEntity<List<ProductsDto>> getAllProducts() {
         return ResponseEntity
                 .ok()

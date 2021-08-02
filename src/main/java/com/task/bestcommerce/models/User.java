@@ -1,12 +1,7 @@
 package com.task.bestcommerce.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.task.bestcommerce.types.PaymentTypes;
-import lombok.*;
-import org.hibernate.annotations.Cascade;
-import org.springframework.beans.factory.annotation.Value;
 
+import lombok.*;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,15 +12,6 @@ import java.util.Collection;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User extends BaseEntity {
-
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id", updatable = false, nullable = false)
-//    private Long id;
-
-
-
-
 
     private String username;
     private String password;

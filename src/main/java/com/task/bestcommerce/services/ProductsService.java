@@ -29,12 +29,22 @@ public class ProductsService {
         return Optional.of(productsMapper.entityToDto(productsRepo.findProductsByproductName(ProductsName)));
     }
 
+
+    //todo ACCEPTANCE CRITERIA 3.1
+    //todo ACCEPTANCE CRITERIA 3.2
+    public ProductsDto saveProducts(ProductsDto ProductsDto) {
+        log.info("Saving new Products {} to database", ProductsDto.getProductName());
+        return productsMapper.entityToDto(productsRepo.save(productsMapper.dtoToEntity(ProductsDto)));
+    }
+
+    //todo ACCEPTANCE CRITERIA 3.3
     public List<ProductsDto> getAllProducts() {
         log.info("Fetching all Productss");
         List<Products> products = productsRepo.findAll();
         return productsMapper.entityListToDtoList(products.stream()
                 .filter(a -> a.getInventory() > 5).collect(Collectors.toList()));
     }
+//todo ACCEPTANCE CRITERIA 4.1
 
 //    public List<ProductsDto> getOnlyThisMerchantProducts() {
 //        log.info("Fetching all Productss");
@@ -48,11 +58,6 @@ public class ProductsService {
 //
 //        return productsMapper.entityListToDtoList(products);
 //    }
-
-    public ProductsDto saveProducts(ProductsDto ProductsDto) {
-        log.info("Saving new Products {} to database", ProductsDto.getProductName());
-        return productsMapper.entityToDto(productsRepo.save(productsMapper.dtoToEntity(ProductsDto)));
-    }
 
 
     public Optional<Products> updateProducts(ProductsDto ProductsDto) {
