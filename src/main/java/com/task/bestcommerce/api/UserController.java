@@ -30,6 +30,7 @@ public class UserController {
     public ResponseEntity<Object> createUser(@RequestBody UserDto userDto) {
         String password = userDto.getPassword();
 
+        //PASSAY library somehow didnot worked on gradle, this is why manual validation implemented :(
         if (password.length() < 6) {
             return ResponseEntity
                     .status(HttpStatus.NOT_ACCEPTABLE)

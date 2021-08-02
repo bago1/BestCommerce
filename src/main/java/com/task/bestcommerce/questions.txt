@@ -1,11 +1,4 @@
 
-3) username pass jsonla alinma
-
-1. custom query for productrepo for select only its products
-
-//sequence policy for liqubase
-
-
  SELECT b.book_name, a.author_name, c.cat_name
  FROM Books b
  JOIN BookAuthor ba ON b.book_id =ba.book_id

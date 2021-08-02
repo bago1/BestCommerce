@@ -24,12 +24,12 @@ public class ProductsController {
                 .body(productsService.getAllProducts());
     }
 
-//    @GetMapping("/merchantproducts")
-//    public ResponseEntity<List<ProductsDto>> getOnlyThisMerchantProducts() {
-//        return ResponseEntity
-//                .ok()
-//                .body(productsService.getOnlyThisMerchantProducts());
-//    }
+    @GetMapping("/merchantproducts")
+    public ResponseEntity<List<ProductsDto>> getOnlyThisMerchantProducts() {
+        return ResponseEntity
+                .ok()
+                .body(productsService.getOnlyThisMerchantProducts());
+    }
 
     @PostMapping("/merchant/saveproduct")
     public ResponseEntity<ProductsDto> createProduct(@RequestBody ProductsDto ProductsDto) {

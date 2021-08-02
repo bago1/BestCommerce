@@ -7,7 +7,9 @@ import com.task.bestcommerce.models.Products;
 import com.task.bestcommerce.repo.ProductRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -44,20 +46,19 @@ public class ProductsService {
         return productsMapper.entityListToDtoList(products.stream()
                 .filter(a -> a.getInventory() > 5).collect(Collectors.toList()));
     }
-//todo ACCEPTANCE CRITERIA 4.1
 
-//    public List<ProductsDto> getOnlyThisMerchantProducts() {
-//        log.info("Fetching all Productss");
-//
-//        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication()
-//                .getPrincipal();
-//        String username = userDetails.getUsername();
-//
-//        List<Products> products = productsRepo.findAllByUsername(username);
-//
-//
-//        return productsMapper.entityListToDtoList(products);
-//    }
+//todo ACCEPTANCE CRITERIA 4.1
+    public List<ProductsDto> getOnlyThisMerchantProducts() {
+
+        Authentication loggedInUser = SecurityContextHolder.getContext().getAuthentication();
+        String username = loggedInUser.getName();
+
+
+        List<Products> products = productsRepo.findAllByUsername(username);
+
+
+        return productsMapper.entityListToDtoList(products);
+    }
 
 
     public Optional<Products> updateProducts(ProductsDto ProductsDto) {
